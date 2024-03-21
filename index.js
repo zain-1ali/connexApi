@@ -11,13 +11,17 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-
 var jsonParser = bodyParser.json();
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/api/admin", adminroutes);
+app.get("/", (req, res) => {
+  res.send({
+    message: "project is running",
+  });
+});
 
 // connectDb();
 let prot = 4000;
