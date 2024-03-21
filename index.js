@@ -11,6 +11,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
+
 var jsonParser = bodyParser.json();
 
 app.use(cors());
